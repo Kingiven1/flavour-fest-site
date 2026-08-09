@@ -132,6 +132,17 @@
     border-radius:18px;
     overflow:hidden;
     max-width:920px; margin:0 auto;
+    text-decoration:none; color:inherit; cursor:pointer;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .pass:hover{
+    transform:translateY(-4px);
+    border-color:var(--gold);
+    box-shadow:0 16px 40px rgba(0,0,0,0.35);
+  }
+  .pass-cta{
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.06em; color:var(--gold);
+    padding-top:4px; opacity:0.85;
   }
   .pass-main{padding:34px 36px; display:flex; flex-direction:column; gap:20px;}
   .pass-route{display:flex; align-items:center; gap:18px;}
@@ -288,7 +299,7 @@
 
 <section class="pass-section">
   <div class="wrap">
-    <div class="pass">
+    <a href="#lineup" class="pass">
       <div class="pass-main">
         <div class="pass-route">
           <div class="pass-city">ORIGIN<small>YOUR CITY</small></div>
@@ -300,6 +311,7 @@
           <div class="pass-field"><label>Departs</label><div>Aug 17, 2026</div></div>
           <div class="pass-field"><label>Host</label><div>W Panama</div></div>
         </div>
+        <div class="pass-cta">See the full weekend lineup ↓</div>
       </div>
       <div class="pass-perf"></div>
       <div class="pass-stub">
@@ -311,7 +323,7 @@
         </div>
         <div class="pass-gate">GATE: CASCO VIEJO</div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
