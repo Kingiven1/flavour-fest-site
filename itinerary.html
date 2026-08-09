@@ -124,11 +124,21 @@
     border-left:2px solid var(--gold); padding-left:14px;
   }
 
+  .good-to-know{margin-top:20px; padding-bottom:20px;}
+  .gtk-grid{margin-top:22px; display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+  .gtk-card{
+    border:1px solid var(--line); border-radius:14px; padding:20px;
+    background:rgba(255,255,255,0.02);
+  }
+  .gtk-title{font-family:'Fraunces', serif; font-weight:600; font-size:16px;}
+  .gtk-card p{margin-top:8px; font-size:13px; color:var(--cream-dim); line-height:1.55;}
+
   footer{margin-top:60px; padding:40px 0 60px; border-top:1px solid var(--line); text-align:center;}
   footer p{color:var(--cream-dim); font-size:13px; margin-top:10px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.6;}
   .back-link{display:inline-block; margin-top:20px; font-size:13px; color:var(--cream-dim); text-decoration:underline;}
 
   @media (max-width:640px){
+    .gtk-grid{grid-template-columns:1fr;}
     .whatsapp-banner{flex-direction:column; align-items:flex-start;}
     .btn-whatsapp{width:100%; justify-content:center;}
   }
@@ -168,16 +178,16 @@
     <p>Meetup times, locations, and the small stuff you actually need — nothing else. Save this page, you'll want it on your phone all weekend.</p>
 
     <div class="scope-note">
-      This page covers the <b>full weekend</b>. If you only purchased a ticket to one event, only that section applies to you — no need to worry about the others. Questions about what your ticket includes? Message us below.
+      This page covers the <b>full weekend</b>. If you only purchased a ticket to one event, only that section applies to you — no need to worry about the others. Questions about what your ticket includes? Message Iven or Shawn directly below.
     </div>
 
     <div class="whatsapp-banner">
       <div>
         <strong>Need something special?</strong>
-        <small>Dietary needs, late arrival, accessibility, anything — just message us.</small>
+        <small>Dietary needs, late arrival, accessibility, anything — join the group, then DM Iven or Shawn directly.</small>
       </div>
       <a class="btn-whatsapp" href="https://chat.whatsapp.com/IFDZH4rv0TNL9h9zNFTypd?s=cl&p=i&mlu=0&amv=0" target="_blank" rel="noopener">
-        Message us on WhatsApp
+        Join WhatsApp & message an admin
       </a>
     </div>
   </div>
@@ -201,7 +211,7 @@
       </ul>
       <div class="callout">
         <div class="callout-label">We need this from you</div>
-        <p>Text us your drink of choice — tequila, vodka, or rum — on <a href="https://chat.whatsapp.com/IFDZH4rv0TNL9h9zNFTypd?s=cl&p=i&mlu=0&amv=0" target="_blank" rel="noopener">WhatsApp</a> so it's ready when you get there.</p>
+        <p>Text your drink of choice — tequila, vodka, or rum — directly to <b>Iven</b> or <b>Shawn</b> in the <a href="https://chat.whatsapp.com/IFDZH4rv0TNL9h9zNFTypd?s=cl&p=i&mlu=0&amv=0" target="_blank" rel="noopener">WhatsApp group</a> so it's ready when you get there.</p>
       </div>
     </div>
 
@@ -226,20 +236,40 @@
       </div>
       <div class="callout">
         <div class="callout-label">We need this from you</div>
-        <p>Text us your preferred reservation time between 12PM and 6PM on <a href="https://chat.whatsapp.com/IFDZH4rv0TNL9h9zNFTypd?s=cl&p=i&mlu=0&amv=0" target="_blank" rel="noopener">WhatsApp</a> so we can hold your seat.</p>
+        <p>Text your preferred reservation time between 12PM and 6PM directly to <b>Iven</b> or <b>Shawn</b> in the <a href="https://chat.whatsapp.com/IFDZH4rv0TNL9h9zNFTypd?s=cl&p=i&mlu=0&amv=0" target="_blank" rel="noopener">WhatsApp group</a> so we can hold your seat.</p>
       </div>
     </div>
 
   </div>
 </section>
 
+<section class="good-to-know">
+  <div class="wrap">
+    <div class="eyebrow">Good to Know</div>
+    <div class="gtk-grid">
+      <div class="gtk-card">
+        <div class="gtk-title">Getting around</div>
+        <p>Uber works fine and is the easiest way to move between venues. Taxis are common too — keep small cash on hand since not all take cards.</p>
+      </div>
+      <div class="gtk-card">
+        <div class="gtk-title">What to bring</div>
+        <p>Your ID, cash for tips, and a portable phone charger — you'll want your phone alive for the whole weekend.</p>
+      </div>
+      <div class="gtk-card">
+        <div class="gtk-title">Weather</div>
+        <p>Hot and humid with the chance of a quick afternoon rain shower — pack light, breathable clothes and don't stress if the sky opens up for ten minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Questions? We're a text away</div>
+    <div class="eyebrow" style="justify-content:center;">Questions? Iven & Shawn are a text away</div>
     <a class="btn-whatsapp" href="https://chat.whatsapp.com/IFDZH4rv0TNL9h9zNFTypd?s=cl&p=i&mlu=0&amv=0" target="_blank" rel="noopener" style="margin-top:16px; display:inline-flex;">
-      Message us on WhatsApp
+      Join WhatsApp & message an admin
     </a>
-    <p>Bookmark this page — you'll want the addresses and meetup times handy all weekend.</p>
+    <p>Join the group, then tap Iven or Shawn's name to message them directly for anything important — drink orders, brunch times, or special requests.</p>
     <a class="back-link" href="/">← Back to flavourfestworldwide.com</a>
   </div>
 </footer>
