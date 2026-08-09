@@ -208,18 +208,18 @@
   .event-name{font-size:19px; font-weight:600;}
   .event-meta{font-family:'Space Mono', monospace; font-size:12px; color:var(--gold); letter-spacing:0.03em;}
 
-  /* ---------- venues ---------- */
-  .venues{display:grid; grid-template-columns:repeat(4, 1fr); gap:22px;}
-  .venue-card{
-    border:1px solid var(--line); border-radius:16px; padding:28px; min-height:220px;
-    display:flex; flex-direction:column; justify-content:flex-end; gap:8px;
-    background:linear-gradient(155deg, rgba(255,122,61,0.10), rgba(138,92,255,0.08));
-    transition:border-color .2s, transform .2s;
+  /* ---------- venue chip (embedded in each day) ---------- */
+  .venue-chip{
+    border:1px solid var(--line); border-radius:14px; padding:16px 20px; max-width:420px;
+    display:flex; flex-direction:column; gap:4px; margin-left:224px;
+    background:linear-gradient(155deg, rgba(255,122,61,0.08), rgba(138,92,255,0.06));
+    transition:border-color .2s;
   }
-  .venue-card:hover{border-color:var(--gold); transform:translateY(-4px);}
+  .venue-chip:hover{border-color:var(--gold);}
   .venue-tag{font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold);}
-  .venue-name{font-family:'Fraunces', serif; font-weight:600; font-size:23px;}
+  .venue-name{font-family:'Fraunces', serif; font-weight:600; font-size:18px;}
   .venue-loc{font-size:13px; color:var(--cream-dim);}
+  .venue-loc a{color:var(--gold); text-decoration:underline;}
 
   /* ---------- launch banner ---------- */
   .launch{
@@ -260,7 +260,7 @@
     .pass-perf::after{left:auto; right:-13px;}
     .day{grid-template-columns:1fr; gap:14px;}
     .flyer{width:140px;}
-    .venues{grid-template-columns:1fr;}
+    .venue-chip{margin-left:0; max-width:none;}
     .launch{flex-direction:column; align-items:flex-start;}
     .signup, .signup-wrap{max-width:100%;}
   }
@@ -274,7 +274,7 @@
   <div class="wordmark">FLAVOUR <em>FEST</em></div>
   <nav>
     <a href="#lineup">Lineup</a>
-    <a href="#venues">Venues</a>
+    <a href="#lineup">Venues</a>
     <a href="https://www.instagram.com/flavourfestworldwide" target="_blank" rel="noopener">Instagram</a>
     <a class="btn-tix" href="https://www.eventbrite.com/o/flavour-fest-120819752251" target="_blank" rel="noopener">Get Tickets</a>
   </nav>
@@ -338,7 +338,14 @@
       <div class="day">
         <div class="day-date">Thu 13<small>Arrivals</small></div>
         <div class="day-events">
-          <div class="event-row"><div class="event-name">Check-in at the W Panama</div><div class="event-meta">All day</div></div>
+          <div class="event-row">
+            <div class="event-info" style="max-width:none;"><div class="event-name">Check-in at the W Panama</div><div class="event-meta">All day</div></div>
+          </div>
+          <div class="venue-chip">
+            <div class="venue-tag">Host Hotel</div>
+            <div class="venue-name">W Panama</div>
+            <div class="venue-loc">Book your own stay <a href="https://www.marriott.com/en-us/hotels/ptywh-w-panama/overview/" target="_blank" rel="noopener">here</a></div>
+          </div>
         </div>
       </div>
       <div class="day">
@@ -350,6 +357,11 @@
               <img src="flyers/bar-crawl.jpg" alt="Bar Crawl flyer" onerror="this.style.display='none'">
             </div>
             <div class="event-info"><div class="event-name">The Bar Crawl</div><div class="event-meta">Best spots in Panama City · Night</div></div>
+          </div>
+          <div class="venue-chip">
+            <div class="venue-tag">Friday Night</div>
+            <div class="venue-name">Panama City nightlife</div>
+            <div class="venue-loc">Best spots across the city</div>
           </div>
         </div>
       </div>
@@ -363,6 +375,11 @@
             </div>
             <div class="event-info"><div class="event-name">Flavour Fest — The Main Event</div><div class="event-meta">212 Club · 10PM–3AM</div></div>
           </div>
+          <div class="venue-chip">
+            <div class="venue-tag">Main Event</div>
+            <div class="venue-name">212 Club</div>
+            <div class="venue-loc">Inside Selina Casco Viejo</div>
+          </div>
         </div>
       </div>
       <div class="day">
@@ -375,38 +392,12 @@
             </div>
             <div class="event-info"><div class="event-name">Brunch Noire</div><div class="event-meta">El Caribe · 12PM–6PM</div></div>
           </div>
+          <div class="venue-chip">
+            <div class="venue-tag">Brunch Noire</div>
+            <div class="venue-name">El Caribe</div>
+            <div class="venue-loc">Waterfront, Panama City</div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="venues">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Where You'll Be</div>
-      <h2>Panama City, front row.</h2>
-    </div>
-    <div class="venues">
-      <div class="venue-card">
-        <div class="venue-tag">Host Hotel</div>
-        <div class="venue-name">W Panama</div>
-        <div class="venue-loc">Book your own stay <a href="https://www.marriott.com/en-us/hotels/ptywh-w-panama/overview/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline;">here</a></div>
-      </div>
-      <div class="venue-card">
-        <div class="venue-tag">Friday Night</div>
-        <div class="venue-name">The Bar Crawl</div>
-        <div class="venue-loc">Best spots across Panama City</div>
-      </div>
-      <div class="venue-card">
-        <div class="venue-tag">Main Event</div>
-        <div class="venue-name">212 Club</div>
-        <div class="venue-loc">Inside Selina Casco Viejo</div>
-      </div>
-      <div class="venue-card">
-        <div class="venue-tag">Brunch Noire</div>
-        <div class="venue-name">El Caribe</div>
-        <div class="venue-loc">Waterfront, Panama City</div>
       </div>
     </div>
   </div>
