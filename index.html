@@ -324,7 +324,7 @@
       <div class="day">
         <div class="day-date">Sat 15<small>The Big Night</small></div>
         <div class="day-events">
-          <div class="event-row"><div class="event-name">Flavour Fest — The Main Event</div><div class="event-meta">Selina Casco Viejo · 10PM–3AM</div></div>
+          <div class="event-row"><div class="event-name">Flavour Fest — The Main Event</div><div class="event-meta">212 Club · 10PM–3AM</div></div>
         </div>
       </div>
       <div class="day">
@@ -347,12 +347,12 @@
       <div class="venue-card">
         <div class="venue-tag">Host Hotel</div>
         <div class="venue-name">W Panama</div>
-        <div class="venue-loc">Home base for the weekend</div>
+        <div class="venue-loc">Book your own stay <a href="https://www.marriott.com/en-us/hotels/ptywh-w-panama/overview/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline;">here</a></div>
       </div>
       <div class="venue-card">
         <div class="venue-tag">Main Event</div>
-        <div class="venue-name">Selina Casco Viejo</div>
-        <div class="venue-loc">Panama City & Cowork</div>
+        <div class="venue-name">212 Club</div>
+        <div class="venue-loc">Inside Selina Casco Viejo</div>
       </div>
       <div class="venue-card">
         <div class="venue-tag">Brunch Noire</div>
@@ -372,11 +372,8 @@
         <p>Itineraries, member profiles, the photo wall, community chat — everything. Drop your email and be the first through the door.</p>
       </div>
       <div class="signup-wrap">
-        <form class="signup" id="email-form">
-          <input type="email" id="email-input" placeholder="you@email.com" required>
-          <button type="submit">Notify me</button>
-        </form>
-        <div class="signup-note" id="signup-note">No spam. Just Flavour Fest updates.</div>
+        <a class="btn-primary" style="text-align:center; display:block;" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener">RSVP on Posh</a>
+        <div class="signup-note">We'll text you updates — RSVP takes 30 seconds.</div>
       </div>
     </div>
   </div>
@@ -409,20 +406,6 @@
   }
   tick();
   setInterval(tick, 30000);
-
-  // Email capture — currently in-memory only.
-  // TODO: replace this handler with a Supabase insert, e.g.
-  //   await supabase.from('email_signups').insert({ email })
-  var form = document.getElementById('email-form');
-  var note = document.getElementById('signup-note');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var email = document.getElementById('email-input').value;
-    if(email){
-      note.textContent = "You're on the list. See you in Panama.";
-      form.querySelector('input').value = '';
-    }
-  });
 </script>
 
 </body>
