@@ -13,7 +13,9 @@
 <!-- Open Graph / social preview -->
 <meta property="og:title" content="Flavour Fest — Panama City: The Interlude">
 <meta property="og:description" content="August 13–17. Bar Crawl, Main Event, and Brunch Noire — an experience, not just a trip.">
-<meta property="og:image" content="https://www.flavourfestworldwide.com/flyers/main-event.jpg">
+<meta property="og:image" content="https://www.flavourfestworldwide.com/social-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://www.flavourfestworldwide.com">
 <meta property="og:type" content="website">
 
@@ -21,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Flavour Fest — Panama City: The Interlude">
 <meta name="twitter:description" content="August 13–17. Bar Crawl, Main Event, and Brunch Noire — an experience, not just a trip.">
-<meta name="twitter:image" content="https://www.flavourfestworldwide.com/flyers/main-event.jpg">
+<meta name="twitter:image" content="https://www.flavourfestworldwide.com/social-share.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,500&family=General+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -266,6 +268,56 @@
   .foot-links a:hover{color:var(--cream);}
   .foot-tag{font-family:'Space Mono', monospace; font-size:11px; color:var(--cream-dim); letter-spacing:0.05em;}
 
+  /* ---------- early access popup ---------- */
+  .ea-overlay{
+    display:none; position:fixed; inset:0; z-index:50;
+    background:rgba(0,0,0,0.7); backdrop-filter:blur(4px);
+    align-items:center; justify-content:center; padding:20px;
+  }
+  .ea-overlay.open{display:flex;}
+  .ea-card{
+    position:relative; max-width:460px; width:100%;
+    background:var(--ink-soft); border:1px solid var(--line); border-radius:20px;
+    padding:44px 38px; text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
+  }
+  .ea-glow{
+    position:absolute; inset:0; border-radius:20px; overflow:hidden; z-index:-1;
+    background:radial-gradient(60% 60% at 50% 0%, rgba(255,122,61,0.25), transparent 70%);
+  }
+  .ea-close{
+    position:absolute; top:16px; right:16px; background:none; border:none; cursor:pointer;
+    color:var(--cream-dim); font-size:20px; line-height:1; padding:6px;
+  }
+  .ea-close:hover{color:var(--cream);}
+  .ea-card h3{
+    font-family:'Fraunces', serif; font-weight:900; font-size:28px; line-height:1.1; margin-top:16px;
+  }
+  .ea-card h3 em{font-style:italic; color:var(--mango); font-weight:500;}
+  .ea-card p{color:var(--cream-dim); font-size:14px; margin-top:14px; line-height:1.6;}
+  .ea-perks{
+    margin-top:20px; display:flex; flex-direction:column; gap:8px; text-align:left;
+  }
+  .ea-perks div{
+    display:flex; align-items:center; gap:10px; font-size:13px; color:var(--cream);
+  }
+  .ea-perks div::before{content:'✦'; color:var(--gold); font-size:12px;}
+  .ea-form{margin-top:26px; display:flex; flex-direction:column; gap:10px;}
+  .ea-form input{
+    background:transparent; border:1px solid var(--line); border-radius:100px;
+    padding:14px 20px; color:var(--cream); font-size:14px; font-family:'General Sans', sans-serif; text-align:center;
+  }
+  .ea-form input:focus{outline:none; border-color:var(--gold);}
+  .ea-form button{
+    border:none; background:var(--gradient-sunset); color:var(--ink); font-weight:600; font-size:15px;
+    padding:14px; border-radius:100px; cursor:pointer;
+  }
+  .ea-form button:disabled{opacity:0.6; cursor:default;}
+  .ea-note{margin-top:12px; font-family:'Space Mono', monospace; font-size:11px; color:var(--cream-dim);}
+  .ea-success{display:none; padding:20px 0;}
+  .ea-success.show{display:block;}
+  .ea-success h3{margin-top:0;}
+
   /* ---------- hamburger menu ---------- */
   .hamburger{
     display:none; flex-direction:column; justify-content:center; gap:5px;
@@ -307,6 +359,36 @@
 <body>
 
 <div class="grain"></div>
+
+<!-- ============ EARLY ACCESS POPUP ============ -->
+<div class="ea-overlay" id="ea-overlay">
+  <div class="ea-card">
+    <div class="ea-glow"></div>
+    <button class="ea-close" id="ea-close" aria-label="Close">✕</button>
+
+    <div id="ea-form-state">
+      <div class="eyebrow" style="justify-content:center;">2027 Is Coming</div>
+      <h3>Get in before <em>everyone else.</em></h3>
+      <p>Sign up now and you'll get early access to 2027 packages before public registration opens — plus exclusive discounts on future Flavour Fest tickets.</p>
+      <div class="ea-perks">
+        <div>First access to 2027 city announcements</div>
+        <div>Discounted packages before public pricing</div>
+        <div>Priority ticket windows for future events</div>
+      </div>
+      <form class="ea-form" id="ea-form">
+        <input type="email" id="ea-email" placeholder="you@email.com" required>
+        <button type="submit" id="ea-submit">Get Early Access</button>
+      </form>
+      <div class="ea-note" id="ea-note">No spam. Just first access.</div>
+    </div>
+
+    <div class="ea-success" id="ea-success">
+      <div class="eyebrow" style="justify-content:center;">You're In</div>
+      <h3>Welcome to the <em>inner circle.</em></h3>
+      <p>Check your inbox — we just sent you a confirmation. You'll be first to know when 2027 opens up.</p>
+    </div>
+  </div>
+</div>
 
 <header>
   <div class="wordmark">FLAVOUR <em>FEST</em></div>
@@ -431,11 +513,11 @@
             </div>
             <div class="event-info">
               <div class="event-name">Flavour Fest — The Main Event</div>
-              <div class="event-meta">212 Club · 10PM–3AM</div>
+              <div class="event-meta">Rock &amp; Folk · 10PM–3AM</div>
               <a class="venue-chip" href="https://www.eventbrite.com/e/flavour-fest-the-main-event-tickets-1993969743178" target="_blank" rel="noopener">
                 <div class="venue-tag">Main Event</div>
-                <div class="venue-name">212 Club</div>
-                <div class="venue-loc">Inside Selina Casco Viejo →</div>
+                <div class="venue-name">Rock &amp; Folk PTY</div>
+                <div class="venue-loc">Bella Vista, Panama City →</div>
               </a>
             </div>
           </div>
@@ -509,6 +591,62 @@
   tick();
   setInterval(tick, 30000);
 
+  // Early access popup
+  (function(){
+    var STORAGE_KEY = 'ff_early_access_seen';
+    var overlay = document.getElementById('ea-overlay');
+    var closeBtn = document.getElementById('ea-close');
+    var form = document.getElementById('ea-form');
+    var submitBtn = document.getElementById('ea-submit');
+    var note = document.getElementById('ea-note');
+    var formState = document.getElementById('ea-form-state');
+    var successState = document.getElementById('ea-success');
+
+    function openPopup(){ overlay.classList.add('open'); }
+    function closePopup(){
+      overlay.classList.remove('open');
+      localStorage.setItem(STORAGE_KEY, 'true');
+    }
+
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      setTimeout(openPopup, 6000);
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) closePopup();
+    });
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var email = document.getElementById('ea-email').value;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Signing up...';
+      note.textContent = '';
+      try {
+        var res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ email: email })
+        });
+        var data = await res.json();
+        if (res.ok) {
+          formState.style.display = 'none';
+          successState.classList.add('show');
+          localStorage.setItem(STORAGE_KEY, 'true');
+        } else {
+          note.textContent = data.error || "Something went wrong — try again.";
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Get Early Access';
+        }
+      } catch (err) {
+        note.textContent = "Something went wrong — try again.";
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get Early Access';
+      }
+    });
+  })();
+
   // Hamburger menu toggle
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobile-menu');
@@ -525,4 +663,4 @@
 </script>
 
 </body>
-</html>
+</html>s
