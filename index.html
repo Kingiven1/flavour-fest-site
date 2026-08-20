@@ -200,8 +200,13 @@
   }
   .section-head p{color:var(--cream-dim); font-size:16px; margin-top:16px; line-height:1.6;}
 
-  /* ---------- recap video (Instagram embed) ---------- */
-  .ig-embed-wrap{display:flex; justify-content:center;}
+  /* ---------- recap video (self-hosted) ---------- */
+  .recap-video-wrap{display:flex; justify-content:center;}
+  .recap-video{
+    width:100%; max-width:380px; aspect-ratio:9/16; border-radius:18px;
+    border:1px solid var(--line); box-shadow:0 20px 50px rgba(0,0,0,0.4);
+    background:var(--ink-soft); display:block; object-fit:cover;
+  }
 
   /* ---------- photo gallery ---------- */
   .gallery-head{margin-top:70px; margin-bottom:24px;}
@@ -366,13 +371,10 @@
       <p>Years of dining, culture, and nightlife — from Medellín to Panama City. This is just the beginning.</p>
     </div>
 
-    <div class="ig-embed-wrap">
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DcL6g3pqSGD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-        <div style="padding:16px;">
-          <a href="https://www.instagram.com/reel/DcL6g3pqSGD/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">View this post on Instagram</a>
-        </div>
-      </blockquote>
-      <script async src="//www.instagram.com/embed.js"></script>
+    <div class="recap-video-wrap">
+      <video class="recap-video" controls playsinline poster="">
+        <source src="recap/recap-video.mp4" type="video/mp4">
+      </video>
     </div>
 
     <div class="gallery-head">
