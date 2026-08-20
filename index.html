@@ -301,6 +301,24 @@
     .signup, .signup-wrap{max-width:100%;}
   }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1983899702327588');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1983899702327588&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 <body>
 
@@ -311,7 +329,7 @@
   <nav>
     <a href="#recap">2026 Recap</a>
     <a href="https://www.instagram.com/flavourfestworldwide" target="_blank" rel="noopener">Instagram</a>
-    <a class="btn-tix" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener">Join the List</a>
+    <a class="btn-tix" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener" data-lead-btn>Join the List</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -321,7 +339,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="#recap">2026 Recap</a>
   <a href="https://www.instagram.com/flavourfestworldwide" target="_blank" rel="noopener">Instagram</a>
-  <a class="btn-tix" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener">Join the List</a>
+  <a class="btn-tix" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener" data-lead-btn>Join the List</a>
 </div>
 
 <section class="hero">
@@ -336,7 +354,7 @@
         <span>Dining</span><span>Culture</span><span>Nightlife</span>
       </div>
       <div class="hero-cta">
-        <a class="btn-primary" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener">Join the List</a>
+        <a class="btn-primary" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener" data-lead-btn>Join the List</a>
         <a class="btn-ghost" href="#recap">Relive 2026</a>
       </div>
     </div>
@@ -402,7 +420,7 @@
         <p>Early access, package pricing before anyone else, and the full weekend lineup — straight to your phone the moment it drops.</p>
       </div>
       <div class="signup-wrap">
-        <a class="btn-primary" style="text-align:center; display:block;" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener">RSVP on Posh</a>
+        <a class="btn-primary" style="text-align:center; display:block;" href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener" data-lead-btn>RSVP on Posh</a>
         <div class="signup-note">We'll text you updates — RSVP takes 30 seconds.</div>
       </div>
     </div>
@@ -415,7 +433,7 @@
     <div class="foot-links">
       <a href="https://www.instagram.com/flavourfestworldwide" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@flavourfestworldwide" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener">RSVP</a>
+      <a href="https://posh.vip/e/flavour-fest-panama-mailing-list-1" target="_blank" rel="noopener" data-lead-btn>RSVP</a>
     </div>
   </div>
 </footer>
@@ -455,6 +473,15 @@
       galleryEl.appendChild(img);
     });
   }
+
+  // Meta Pixel — track every "Join the List" / RSVP click as a Lead
+  document.querySelectorAll('[data-lead-btn]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+    });
+  });
 
   // Hamburger menu toggle
   var hamburger = document.getElementById('hamburger');
