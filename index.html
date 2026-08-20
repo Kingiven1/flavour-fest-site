@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flavour Fest — Save the Date: March 11–15, 2027</title>
-<meta name="description" content="Flavour Fest returns to Panama City, March 11–15, 2027. Bar Crawl, Main Event, and Brunch Noire — join the list for early access.">
+<meta name="description" content="Flavour Fest returns to Panama City, March 11–15, 2027 — the biggest one yet. Join the list for early access.">
 
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -12,7 +12,7 @@
 
 <!-- Open Graph / social preview -->
 <meta property="og:title" content="Flavour Fest — Save the Date: March 11–15, 2027">
-<meta property="og:description" content="The Interlude returns to Panama City. Bar Crawl, Main Event, and Brunch Noire — join the list for early access.">
+<meta property="og:description" content="The biggest Flavour Fest yet is coming to Panama City. Join the list for early access.">
 <meta property="og:image" content="https://www.flavourfestworldwide.com/social-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Flavour Fest — Save the Date: March 11–15, 2027">
-<meta name="twitter:description" content="The Interlude returns to Panama City. Bar Crawl, Main Event, and Brunch Noire — join the list for early access.">
+<meta name="twitter:description" content="The biggest Flavour Fest yet is coming to Panama City. Join the list for early access.">
 <meta name="twitter:image" content="https://www.flavourfestworldwide.com/social-share.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,39 +200,23 @@
   }
   .section-head p{color:var(--cream-dim); font-size:16px; margin-top:16px; line-height:1.6;}
 
-  /* ---------- lineup ---------- */
-  .lineup{display:flex; flex-direction:column;}
-  .day{
-    display:grid; grid-template-columns:180px 1fr; gap:32px;
-    padding:32px 0; border-top:1px solid var(--line);
+  /* ---------- recap video (Instagram embed) ---------- */
+  .ig-embed-wrap{display:flex; justify-content:center;}
+
+  /* ---------- photo gallery ---------- */
+  .gallery-head{margin-top:70px; margin-bottom:24px;}
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;
   }
-  .day:last-child{border-bottom:1px solid var(--line);}
-  .day-date{font-family:'Fraunces', serif; font-weight:900; font-size:22px;}
-  .day-date small{display:block; font-family:'Space Mono', monospace; font-weight:400; font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-top:6px;}
-  .day-events{display:flex; flex-direction:column; gap:32px;}
-  .event-row{display:flex; align-items:flex-start; gap:24px;}
-  .event-info{display:flex; flex-direction:column; gap:10px; padding-top:8px; max-width:420px;}
-  .venue-chip{
-    display:block; text-decoration:none; color:inherit;
-    border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin-top:10px;
-    background:linear-gradient(155deg, rgba(255,122,61,0.08), rgba(138,92,255,0.06));
-    transition:border-color .2s, transform .2s;
-  }
-  .venue-chip:hover{border-color:var(--gold); transform:translateY(-2px);}
-  .venue-tag{font-family:'Space Mono', monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold);}
-  .venue-name{font-family:'Fraunces', serif; font-weight:600; font-size:18px; margin-top:2px;}
-  .venue-loc{font-size:13px; color:var(--cream-dim); margin-top:2px;}
-  .flyer{
-    position:relative; width:200px; aspect-ratio:4/5; border-radius:14px; overflow:hidden; flex-shrink:0;
+  .gallery-grid img{
+    width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;
     border:1px solid var(--line);
-    background:linear-gradient(145deg, rgba(255,122,61,0.18), rgba(138,92,255,0.14));
-    box-shadow:0 10px 30px rgba(0,0,0,0.35);
   }
-  .flyer-label{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:6px;
-    font-family:'Space Mono', monospace; font-size:9px; letter-spacing:0.05em; color:var(--gold); line-height:1.3;
+  .gallery-empty{
+    grid-column:1 / -1;
+    border:1px dashed var(--line); border-radius:14px; padding:60px 20px; text-align:center;
+    color:var(--cream-dim); font-family:'Space Mono', monospace; font-size:13px;
   }
-  .flyer img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
 
   .event-name{font-size:19px; font-weight:600;}
   .event-meta{font-family:'Space Mono', monospace; font-size:12px; color:var(--gold); letter-spacing:0.03em;}
@@ -298,8 +282,7 @@
     .pass-perf{width:100%; height:1px; background-image:radial-gradient(circle, var(--ink) 3px, transparent 3px); background-size:16px 1px; background-repeat:repeat-x;}
     .pass-perf::before, .pass-perf::after{top:50%; left:-13px; transform:translateY(-50%);}
     .pass-perf::after{left:auto; right:-13px;}
-    .day{grid-template-columns:1fr; gap:14px;}
-    .flyer{width:140px;}
+    .gallery-grid{grid-template-columns:repeat(2, 1fr);}
 
     .launch{flex-direction:column; align-items:flex-start;}
     .signup, .signup-wrap{max-width:100%;}
@@ -333,8 +316,8 @@
   <div class="horizon"></div>
   <div class="wrap hero-inner">
     <div class="eyebrow">Save The Date · Panama City</div>
-    <h1 class="hero-title">The Interlude<br>is <span class="accent">coming back.</span></h1>
-    <p class="hero-sub">March 11–15, 2027 — four nights of dining, culture, wellness, and nightlife in one of Latin America's most electric cities. Full details drop soon. Get on the list now for early access.</p>
+    <h1 class="hero-title">Flavour Fest<br>is coming back <span class="accent">bigger than ever.</span></h1>
+    <p class="hero-sub">March 11–15, 2027 — the biggest Flavour Fest yet, in Panama City. Years of dining, culture, and nightlife, all building to this. Get on the list now for early access.</p>
     <div class="hero-tags">
       <span>Dining</span><span>Culture</span><span>Nightlife</span>
     </div>
@@ -378,72 +361,24 @@
 <section id="recap">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Last Time — Aug 2026</div>
-      <h2>Here's what it looked like.</h2>
-      <p>2027's lineup is still coming together — this is a taste of the energy from last time.</p>
+      <div class="eyebrow">The Journey So Far</div>
+      <h2>The biggest Flavour Fest yet is coming.</h2>
+      <p>Years of dining, culture, and nightlife — from Medellín to Panama City. This is just the beginning.</p>
     </div>
-    <div class="lineup">
-      <div class="day">
-        <div class="day-date">Night 1<small>Bar Crawl</small></div>
-        <div class="day-events">
-          <div class="event-row">
-            <div class="flyer">
-              <div class="flyer-label">Bar Crawl<br>flyer</div>
-              <img src="flyers/bar-crawl.jpg" alt="Bar Crawl flyer" onerror="this.style.display='none'">
-            </div>
-            <div class="event-info">
-              <div class="event-name">The Bar Crawl</div>
-              <div class="event-meta">Best spots in Panama City · Night</div>
-              <div class="venue-chip">
-                <div class="venue-tag">2026</div>
-                <div class="venue-name">Panama City nightlife</div>
-                <div class="venue-loc">Best spots across the city</div>
-              </div>
-            </div>
-          </div>
+
+    <div class="ig-embed-wrap">
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DcL6g3pqSGD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+        <div style="padding:16px;">
+          <a href="https://www.instagram.com/reel/DcL6g3pqSGD/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">View this post on Instagram</a>
         </div>
-      </div>
-      <div class="day">
-        <div class="day-date">Night 2<small>Main Event</small></div>
-        <div class="day-events">
-          <div class="event-row">
-            <div class="flyer">
-              <div class="flyer-label">Main Event<br>flyer</div>
-              <img src="flyers/main-event.jpg" alt="Main Event flyer" onerror="this.style.display='none'">
-            </div>
-            <div class="event-info">
-              <div class="event-name">Flavour Fest — The Main Event</div>
-              <div class="event-meta">Rock &amp; Folk · 10PM–3AM</div>
-              <div class="venue-chip">
-                <div class="venue-tag">2026</div>
-                <div class="venue-name">Rock &amp; Folk PTY</div>
-                <div class="venue-loc">Bella Vista, Panama City</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-date">Night 3<small>Brunch Noire</small></div>
-        <div class="day-events">
-          <div class="event-row">
-            <div class="flyer">
-              <div class="flyer-label">Brunch Noire<br>flyer</div>
-              <img src="flyers/brunch-noire.jpg" alt="Brunch Noire flyer" onerror="this.style.display='none'">
-            </div>
-            <div class="event-info">
-              <div class="event-name">Brunch Noire</div>
-              <div class="event-meta">El Caribe · 12PM–6PM</div>
-              <div class="venue-chip">
-                <div class="venue-tag">2026</div>
-                <div class="venue-name">El Caribe</div>
-                <div class="venue-loc">Waterfront, Panama City</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </blockquote>
+      <script async src="//www.instagram.com/embed.js"></script>
     </div>
+
+    <div class="gallery-head">
+      <div class="eyebrow">Since Day One</div>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
   </div>
 </section>
 
@@ -490,6 +425,25 @@
   }
   tick();
   setInterval(tick, 30000);
+
+  // Photo gallery — add file paths here as you get photos, e.g. 'gallery/medellin-01.jpg'
+  // Just drop the matching image file into a "gallery" folder next to index.html and add its name below.
+  var galleryPhotos = [
+    // 'gallery/medellin-01.jpg',
+    // 'gallery/panama-2026-01.jpg',
+  ];
+  var galleryEl = document.getElementById('gallery-grid');
+  if (galleryPhotos.length === 0) {
+    galleryEl.innerHTML = '<div class="gallery-empty">Photos from every Flavour Fest since day one — coming soon.</div>';
+  } else {
+    galleryPhotos.forEach(function(src){
+      var img = document.createElement('img');
+      img.src = src;
+      img.loading = 'lazy';
+      img.alt = 'Flavour Fest recap photo';
+      galleryEl.appendChild(img);
+    });
+  }
 
   // Hamburger menu toggle
   var hamburger = document.getElementById('hamburger');
