@@ -456,10 +456,22 @@ src="https://www.facebook.com/tr?id=1983899702327588&ev=PageView&noscript=1"
   setInterval(tick, 30000);
 
   // Photo gallery — add file paths here as you get photos, e.g. 'gallery/medellin-01.jpg'
-  // Just drop the matching image file into a "gallery" folder next to index.html and add its name below.
+  // Just drop the ORIGINAL, full-size photo into a "gallery" folder next to index.html and add its name below.
+  // No need to compress anything yourself — Vercel automatically resizes and compresses every
+  // photo on the fly when it's served, so full-size originals are totally fine to use here.
   var galleryPhotos = [
-    // 'gallery/medellin-01.jpg',
-    // 'gallery/panama-2026-01.jpg',
+    'gallery/medellin-01.jpg',
+    'gallery/medellin-02.jpg',
+    'gallery/medellin-03.jpg',
+    'gallery/medellin-04.jpg',
+    'gallery/medellin-05.jpg',
+    'gallery/medellin-06.jpg',
+    'gallery/medellin-07.jpg',
+    'gallery/medellin-08.jpg',
+    'gallery/medellin-09.jpg',
+    'gallery/medellin-10.jpg',
+    'gallery/medellin-11.jpg',
+    'gallery/medellin-12.jpg',
   ];
   var galleryEl = document.getElementById('gallery-grid');
   if (galleryPhotos.length === 0) {
@@ -467,8 +479,10 @@ src="https://www.facebook.com/tr?id=1983899702327588&ev=PageView&noscript=1"
   } else {
     galleryPhotos.forEach(function(src){
       var img = document.createElement('img');
-      img.src = src;
+      // Requests a 600px-wide, auto-format (WebP/AVIF), compressed version via Vercel's Image Optimization API
+      img.src = '/_vercel/image?url=' + encodeURIComponent('/' + src) + '&w=600&q=75';
       img.loading = 'lazy';
+      img.decoding = 'async';
       img.alt = 'Flavour Fest recap photo';
       galleryEl.appendChild(img);
     });
